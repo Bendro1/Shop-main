@@ -22,7 +22,7 @@ public class DBInsertTest {
 
     private final String insertCustomer = "INSERT INTO customer(name,surname,email,address,age,phone_number) values (?,?,?,?,?,?)";
     private final String insertMerchant = "INSERT INTO merchant(name,email,address) values(?,?,?)";
-    private final String insertProduct ="INSERT INTO product(merchant_id,name,description,price,created_at,avaliable) values(?,?,?,?,?,?)";
+    private final String insertProduct ="INSERT INTO product(merchant_id,name,description,price,created_at,available) values(?,?,?,?,?,?)";
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
