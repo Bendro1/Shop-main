@@ -36,7 +36,7 @@ public class CustomerRepository {
         }
     }
     public Integer add(Customer customer){
-        final String sql ="inser into customer(name,surname,email,address,age,phone_number) values (?,?,?,?,?,?)";
+        final String sql ="insert into customer(name,surname,email,address,age,phone_number) values (?,?,?,?,?,?)";
 
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(new PreparedStatementCreator() {

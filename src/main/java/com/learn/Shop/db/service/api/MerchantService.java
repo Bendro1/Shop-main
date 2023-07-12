@@ -10,7 +10,7 @@ public interface MerchantService {
     List<Merchant> getMerchants();
 
     @Nullable
-    Merchant get(int it);
+    Merchant get(int id);
     @Nullable
     Integer add(Merchant merchant);
 }

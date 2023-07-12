@@ -36,7 +36,7 @@ public class ProductRepository {
         }
     }
     public Integer add(Product product){
-        final String sql="insert * into product (merchant_id,name,description,price,created_at,available) values(?,?,?,?,?,?)";
+        final String sql="insert  into product (merchant_id,name,description,price,created_at,available) values(?,?,?,?,?,?)";
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(new PreparedStatementCreator() {
             @Override
