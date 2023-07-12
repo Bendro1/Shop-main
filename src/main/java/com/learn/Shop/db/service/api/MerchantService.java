@@ -1,4 +1,4 @@
-package com.learn.Shop.db.service.api.request;
+package com.learn.Shop.db.service.api;
 
 import com.learn.Shop.domain.Merchant;
 import org.springframework.lang.Nullable;
