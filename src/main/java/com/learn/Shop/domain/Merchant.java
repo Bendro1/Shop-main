@@ -6,7 +6,6 @@ import org.springframework.lang.Nullable;
 import java.util.Objects;
 
 public class Merchant {
-
     @Nullable
     private Integer id;
     @NonNull
@@ -16,10 +15,9 @@ public class Merchant {
     @NonNull
     private String address;
 
-    public Merchant() {
-    }
+    public Merchant() {}
 
-    public Merchant(@NonNull String name, @NonNull String email, @NonNull String address) {
+    public Merchant(String name, String email, String address) {
         this.name = name;
         this.email = email;
         this.address = address;
@@ -34,30 +32,27 @@ public class Merchant {
         this.id = id;
     }
 
-    @NonNull
     public String getName() {
         return name;
     }
 
-    public void setName(@NonNull String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    @NonNull
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(@NonNull String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    @NonNull
     public String getAddress() {
         return address;
     }
 
-    public void setAddress(@NonNull String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
@@ -66,8 +61,10 @@ public class Merchant {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Merchant merchant = (Merchant) o;
-        return Objects.equals(id, merchant.id) && Objects.equals(name, merchant.name) &&
-                Objects.equals(email, merchant.email) && Objects.equals(address, merchant.address);
+        return Objects.equals(id, merchant.id) &&
+                Objects.equals(name, merchant.name) &&
+                Objects.equals(email, merchant.email) &&
+                Objects.equals(address, merchant.address);
     }
 
     @Override

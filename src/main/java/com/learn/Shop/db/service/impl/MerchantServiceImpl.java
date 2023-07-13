@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class MerchantServiceImpl  implements MerchantService {
+public class MerchantServiceImpl implements MerchantService {
 
     private final MerchantRepository merchantRepository;
 

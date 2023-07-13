@@ -21,11 +21,9 @@ public class Customer {
     @Nullable
     private String phoneNumber;
 
-    public Customer() {
-    }
+    public Customer() {}
 
-    public Customer(@NonNull String name, @NonNull String surname, @NonNull String email, @NonNull String address,
-                    @Nullable Integer age, @Nullable String phoneNumber) {
+    public Customer(String name, String surname, String email, String address, @Nullable Integer age, @Nullable String phoneNumber) {
         this.name = name;
         this.surname = surname;
         this.email = email;
@@ -43,39 +41,35 @@ public class Customer {
         this.id = id;
     }
 
-    @NonNull
     public String getName() {
         return name;
     }
 
-    public void setName(@NonNull String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    @NonNull
     public String getSurname() {
         return surname;
     }
 
-    public void setSurname(@NonNull String surname) {
+    public void setSurname(String surname) {
         this.surname = surname;
     }
 
-    @NonNull
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(@NonNull String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    @NonNull
     public String getAddress() {
         return address;
     }
 
-    public void setAddress(@NonNull String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
@@ -102,9 +96,12 @@ public class Customer {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Customer customer = (Customer) o;
-        return Objects.equals(id, customer.id) && Objects.equals(name, customer.name) &&
-                Objects.equals(surname, customer.surname) && Objects.equals(email, customer.email) &&
-                Objects.equals(address, customer.address) && Objects.equals(age, customer.age) &&
+        return Objects.equals(id, customer.id) &&
+                Objects.equals(name, customer.name) &&
+                Objects.equals(surname, customer.surname) &&
+                Objects.equals(email, customer.email) &&
+                Objects.equals(address, customer.address) &&
+                Objects.equals(age, customer.age) &&
                 Objects.equals(phoneNumber, customer.phoneNumber);
     }
 

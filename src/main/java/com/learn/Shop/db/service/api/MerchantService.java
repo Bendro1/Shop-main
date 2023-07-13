@@ -11,6 +11,8 @@ public interface MerchantService {
 
     @Nullable
     Merchant get(int id);
+
     @Nullable
-    Integer add(Merchant merchant);
+    Integer add(Merchant merchant); // returns generated id
+
 }

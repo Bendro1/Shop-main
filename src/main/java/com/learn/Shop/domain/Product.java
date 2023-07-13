@@ -18,21 +18,20 @@ public class Product {
     private String description;
     @NonNull
     private double price;
-    @NonNull
+    @Nullable
     private Timestamp createdAt;
     @NonNull
     private int available;
 
-    public Product() {
-    }
+    public Product() {}
 
-    public Product(int merchantId, @NonNull String name, @NonNull String description, double price, int available) {
+    public Product(int merchantId, String name, String description, double price, int available) {
         this.merchantId = merchantId;
         this.name = name;
         this.description = description;
         this.price = price;
         this.available = available;
-        this.createdAt=Timestamp.from(Instant.now());
+        this.createdAt = Timestamp.from(Instant.now());
     }
 
     @Nullable
@@ -52,21 +51,19 @@ public class Product {
         this.merchantId = merchantId;
     }
 
-    @NonNull
     public String getName() {
         return name;
     }
 
-    public void setName(@NonNull String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    @NonNull
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(@NonNull String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
@@ -78,12 +75,12 @@ public class Product {
         this.price = price;
     }
 
-    @NonNull
+    @Nullable
     public Timestamp getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(@NonNull Timestamp createdAt) {
+    public void setCreatedAt(Timestamp createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -100,9 +97,13 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return merchantId == product.merchantId && Double.compare(product.price, price) == 0 &&
-                available == product.available && Objects.equals(id, product.id) && Objects.equals(name, product.name)
-                && Objects.equals(description, product.description) && Objects.equals(createdAt, product.createdAt);
+        return merchantId == product.merchantId &&
+                Double.compare(product.price, price) == 0 &&
+                available == product.available &&
+                Objects.equals(id, product.id) &&
+                Objects.equals(name, product.name) &&
+                Objects.equals(description, product.description) &&
+                createdAt.getTime() == product.createdAt.getTime();
     }
 
     @Override
