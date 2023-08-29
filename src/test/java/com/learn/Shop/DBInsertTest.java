@@ -6,18 +6,23 @@ import com.learn.Shop.domain.Customer;
 import com.learn.Shop.domain.Merchant;
 import com.learn.Shop.domain.Product;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
+import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.Instant;
-
+//
+//@RunWith(SpringRunner.class)
 @SpringBootTest
+@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_CLASS)
 public class DBInsertTest {
 
     private final String insertCustomer = "INSERT INTO customer(name,surname,email,address,age,phone_number) values (?,?,?,?,?,?)";

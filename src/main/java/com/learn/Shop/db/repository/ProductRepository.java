@@ -19,7 +19,6 @@ import java.util.List;
 
 @Component
 public class ProductRepository {
-
     private final JdbcTemplate jdbcTemplate;
     private final ProductRowMapper productRowMapper = new ProductRowMapper();
 
